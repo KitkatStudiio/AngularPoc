@@ -27,100 +27,12 @@
 
 
 <div class="row" style="margin-top: 4%;">
-    <div class="col-sm-4">
+    <div class="col-sm-4"  *ngFor= "let cars of carSizes"  [ngClass]="{'active': cars.isSelected}" (click)="listClick($event, cars)">
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <img src="assets/img/convertible (1).png" style="height: 120px;width: 120px;">
-                <h1 style="font-family: fantasy;font-size: 10px">GaragePlug</h1>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <img src="assets/img/car.png" style="height: 120px;width: 120px;">
-                <h1 style="font-family: fantasy;font-size: 10px">GaragePlug</h1>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <img src="assets/img/car (1).png" style="height: 120px;width: 120px;">
-                <h1 style="font-family: fantasy;font-size: 10px">GaragePlug</h1>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-</div>    
-
-
-<div class="row" style="margin-top: 4%;">
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <img src="assets/img/car (2).png" style="height: 120px;width: 120px;">
-                <h1 style="font-family: fantasy;font-size: 10px">GaragePlug</h1>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <img src="assets/img/car (3).png" style="height: 120px;width: 120px;">
-                <h1 style="font-family: fantasy;font-size: 10px">GaragePlug</h1>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <img src="assets/img/car (4).png" style="height: 120px;width: 120px;">
-                <h1 style="font-family: fantasy;font-size: 10px">GaragePlug</h1>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-</div>    
-
-
-<div class="row" style="margin-top: 4%;">
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <img src="assets/img/car.png" style="height: 120px;width: 120px;">
-                <h1 style="font-family: fantasy;font-size: 10px">GaragePlug</h1>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <img src="assets/img/convertible (1).png" style="height: 120px;width: 120px;">
-                <h1 style="font-family: fantasy;font-size: 10px">GaragePlug</h1>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <img src="assets/img/convertible.png" style="height: 120px;width: 120px;">
-                <h1 style="font-family: fantasy;font-size: 10px">GaragePlug</h1>
+                <h6>{{cars.carSize}}: {{cars.Price}}</h6>
             </div>
             <div class="col-sm-4"></div>
         </div>
