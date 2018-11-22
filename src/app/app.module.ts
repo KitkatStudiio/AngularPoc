@@ -10,6 +10,8 @@ import { CarSizesComponent } from './car-sizes/car-sizes.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { CarServices } from './CarServices';
 import { CarSizesModel } from './car-sizes/car-sizes-model';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { SharedService } from './shared.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { CarSizesModel } from './car-sizes/car-sizes-model';
     HomeDashboardComponent,
     AllservicesComponent,
     CarSizesComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { CarSizesModel } from './car-sizes/car-sizes-model';
   ],
   providers: [
     CarServices,
-    CarSizesModel
+    CarSizesModel,
+    SharedService
   ],
   bootstrap: [AppComponent]
 })

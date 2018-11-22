@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarSizesModel } from './car-sizes-model';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-car-sizes',
@@ -19,11 +20,12 @@ export class CarSizesComponent {
      new CarSizesModel('Jeep', 3200000, '', false)
      ];
 
-  constructor() { }
+  constructor(private _shared: SharedService) { }
 
   listClick(event, newValue: CarSizesModel) {
     console.log(newValue);
     newValue.isSelected = !newValue.isSelected;
+    this._shared.getAllCarSizes(newValue);
 }
 
 }

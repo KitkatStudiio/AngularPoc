@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarServices } from '../CarServices';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-allservices',
@@ -18,10 +19,14 @@ export class AllservicesComponent {
     new CarServices('Clutch operation', 1100, 'https://img.icons8.com/ios/1600/car-service.png', false),
   ];
 
-  constructor() { }
+  selectedCars: CarServices[] = [];
+
+  constructor(private _service: SharedService) { }
   listClick(event, newValue: CarServices) {
     console.log(newValue);
     newValue.isSelected = !newValue.isSelected;
+    this.selectedCars.push(newValue);
+    this._service.getAllCarServices(this.selectedCars);
 }
 
 }
