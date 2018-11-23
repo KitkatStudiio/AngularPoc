@@ -23,7 +23,6 @@ export class AllservicesComponent {
 
   constructor(private _service: SharedService) { }
   listClick(event, newValue: CarServices) {
-    console.log(newValue);
     newValue.isSelected = !newValue.isSelected;
     this.selectedCars.push(newValue);
     this._service.getAllCarServices(this.selectedCars);

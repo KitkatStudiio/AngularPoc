@@ -8,7 +8,7 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./car-sizes.component.scss']
 })
 export class CarSizesComponent {
-
+  selectedSizes: CarSizesModel[] = [];
   carSizes: CarSizesModel[] = [
      new CarSizesModel('Hatchback', 500000, '', false),
      new CarSizesModel('Sedan', 100000, '', false),
@@ -25,7 +25,8 @@ export class CarSizesComponent {
   listClick(event, newValue: CarSizesModel) {
     console.log(newValue);
     newValue.isSelected = !newValue.isSelected;
-    this._shared.getAllCarSizes(newValue);
+    this.carSizes.push(newValue);
+    this._shared.getAllCarSizes( this.carSizes);
 }
 
 }

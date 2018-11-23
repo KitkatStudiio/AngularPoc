@@ -36,7 +36,7 @@
 </div>
 
 <div class="row" style="margin-top: 4%;">
-    <div class="col-sm-4 car-service" *ngFor="let service of allServices " [ngClass]="{'active': service.isSelected}" (click)="listClick($event, service)">
+    <div class="col-sm-4 car-service" *ngFor="let service of carserviceOld " [ngClass]="{'active': service.isSelected}" (click)="listClick($event, service)">
         <div class="row">
             <div class="col-sm-4"></div>
             <div>

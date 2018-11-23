@@ -8,17 +8,17 @@ import { CarSizesModel } from './car-sizes/car-sizes-model';
 })
 export class SharedService {
 
-   carServices: Subject<any>;
-   carSize: Subject<CarSizesModel>;
+  public carServices = new  Subject<any>();
+  public carSize = new  Subject<any>();
 
   constructor() { }
 
   getAllCarServices(cars: any) {
-    this.carServices = cars;
+  this.carServices.next(cars);
    }
 
-  //  getAllCarSizes(sizes: any) {
-  //    this.carSize.next(sizes);
-  //  }
+   getAllCarSizes(sizes: any) {
+     this.carSize.next(sizes);
+   }
 
 }
