@@ -12,7 +12,5 @@ export class HomeDashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-  firstClick() {
-  
-  }
+
 }

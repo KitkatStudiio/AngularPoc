@@ -12,22 +12,18 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
-  carserviceOld: CarServices[];
-  carNewSize: CarSizesModel[];
-  subscription: Subscription;
+
+  selectedCars: CarServices[];
+  selectedSizes: CarSizesModel[];
+
 
   constructor(private _shared: SharedService) { }
 
   ngOnInit() {
-  this._shared.carServices.subscribe((carService: CarServices[]) => {
-    this.carserviceOld = carService;
-    console.log(this.carserviceOld);
-});
 
-this._shared.carSize.subscribe((carSSize: CarSizesModel[]) => {
-  this.carNewSize = carSSize;
-  console.log(this.carNewSize);
-});
+    // onInit getting all selected value from Services
+    this.selectedCars =  this._shared.getAllCarservice();
+    this.selectedSizes = this._shared.getAlCarSizes();
   }
 
 

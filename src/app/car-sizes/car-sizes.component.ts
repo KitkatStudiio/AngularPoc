@@ -7,26 +7,20 @@ import { SharedService } from '../shared.service';
   templateUrl: './car-sizes.component.html',
   styleUrls: ['./car-sizes.component.scss']
 })
-export class CarSizesComponent {
-  selectedSizes: CarSizesModel[] = [];
-  carSizes: CarSizesModel[] = [
-     new CarSizesModel('Hatchback', 500000, '', false),
-     new CarSizesModel('Sedan', 100000, '', false),
-     new CarSizesModel('MUV/SUV', 600000, '', false),
-     new CarSizesModel('Coupe', 1200000, '', false),
-     new CarSizesModel('Convertible', 2500000, '', false),
-     new CarSizesModel('Wagon', 5400000, '', false),
-     new CarSizesModel('Van', 4700000, '', false),
-     new CarSizesModel('Jeep', 3200000, '', false)
-     ];
+export class CarSizesComponent implements OnInit {
+
+
+  allcarSizes: CarSizesModel[] = [];
 
   constructor(private _shared: SharedService) { }
+
+  ngOnInit(): void {
+    this.allcarSizes = this._shared.getAlCarSizes();
+  }
 
   listClick(event, newValue: CarSizesModel) {
     console.log(newValue);
     newValue.isSelected = !newValue.isSelected;
-    this.carSizes.push(newValue);
-    this._shared.getAllCarSizes( this.carSizes);
 }
 
 }

@@ -28,7 +28,7 @@
         <div class="col-sm-5">
         </div>
         <div class="col-sm-2 center-block">
-            <h1 style="font-family: fantasy;font-size: 20px;margin-top: 2%">Services</h1>
+            <h1 style="font-family: fantasy;font-size: 20px;margin-top: 2%">Selected Services</h1>
         </div>
         <div class="col-sm-5">
         </div>
@@ -36,9 +36,8 @@
 </div>
 
 <div class="row" style="margin-top: 4%;">
-    <div class="col-sm-4 car-service" *ngFor="let service of carserviceOld " [ngClass]="{'active': service.isSelected}" (click)="listClick($event, service)">
-        <div class="row">
-            <div class="col-sm-4"></div>
+    <div class="col-sm-4 car-service" *ngFor="let service of selectedCars" >
+        <div class="row" *ngIf="service.isSelected==true">
             <div>
                 <img [src]="service.imagePath" style="height: 120px;width: 120px;">
                 <h6>{{service.name}}</h6>
@@ -57,7 +56,7 @@
         <div class="col-sm-5">
         </div>
         <div class="col-sm-2 center-block">
-            <h1 style="font-family: fantasy;font-size: 20px;margin-top: 2%">Sizes</h1>
+            <h1 style="font-family: fantasy;font-size: 20px;margin-top: 2%">Selected Sizes</h1>
         </div>
         <div class="col-sm-5">
         </div>
@@ -65,13 +64,13 @@
 </div>
 
 <div class="row" style="margin-top: 4%;">
-    <div class="col-sm-4 car-service" *ngFor="let carSZ of carSize" [ngClass]="{'active': service.isSelected}" (click)="listClick($event, service)">
-        <div class="row">
+    <div class="col-sm-4 car-service" *ngFor="let carSZ of selectedSizes">
+        <div class="row" *ngIf="carSZ.isSelected==true">
             <div class="col-sm-4"></div>
             <div>
-                <img [src]="service.imagePath" style="height: 120px;width: 120px;">
-                <h6>{{carSZ.name}}</h6>
-                <h6>Amount: {{carSZ.Price}}</h6>
+                <img [src]="carSZ.imagePath" style="height: 120px;width: 120px;">
+                <h6>{{carSZ.carSize}}</h6>
+              <h6>Amount: {{carSZ.Price}}</h6>
                 <h1></h1>
             </div>
             <div class="col-sm-4"></div>
@@ -97,9 +96,9 @@
             <div class="col-sm-5">
 
             </div>
-            <div class="col-sm-2 center-block">
+            <!-- <div class="col-sm-2 center-block">
                 <button type="button" class="btn btn-default" [routerLink]="'/car-sizes'">CONTINUE</button>
-            </div>
+            </div> -->
             <div class="col-sm-5">
 
             </div>
